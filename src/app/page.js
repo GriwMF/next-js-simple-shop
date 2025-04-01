@@ -50,17 +50,6 @@ export default function Home() {
                 overflow: 'hidden'
               }}
             >
-              <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Featured products" 
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
-                  }}
-                />
-              </div>
             </Box>
           </Grid>
         </Grid>
@@ -72,7 +61,7 @@ export default function Home() {
           Shop by Category
         </Typography>
         <Grid container spacing={3} sx={{ mt: 2 }}>
-          {['electronics', 'clothing', 'home', 'accessories'].map((category) => (
+          {['COATS', 'JEANS', 'T-SHIRTS', 'ACCESSORIES'].map((category) => (
             <Grid item xs={12} sm={6} md={3} key={category}>
               <Paper 
                 elevation={2} 
@@ -100,7 +89,7 @@ export default function Home() {
                 >
                   <div style={{ position: 'relative', width: '100%', height: '100%' }}>
                     <img 
-                      src={`/api/placeholder/300/200`} 
+                      src={`/images/categories/${category.toLowerCase()}.jpg`} 
                       alt={category}
                       style={{
                         width: '100%',

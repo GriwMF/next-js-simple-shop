@@ -110,7 +110,7 @@ export default function ProductsPage() {
             >
               <CardMedia
                 component="img"
-                height="200"
+                height="100"
                 image={product.image}
                 alt={product.name}
               />

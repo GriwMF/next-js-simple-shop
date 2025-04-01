@@ -1,51 +1,147 @@
 export const products = [
   {
     id: 1,
-    name: "Premium Wireless Headphones",
-    description: "High-quality wireless headphones with noise cancellation",
-    price: 129.99,
-    image: "/api/placeholder/400/300",
-    category: "electronics"
+    name: "SHORTENED DOUBLE-BREASTED GREY TRENCH COAT",
+    description: "Color: grey",
+    price: 99.99,
+    image: "/images/products/grey-coat.jpg",
+    category: "COATS"
   },
   {
     id: 2,
-    name: "Smart Fitness Watch",
-    description: "Track your fitness goals with this advanced smartwatch",
-    price: 89.99,
-    image: "/api/placeholder/400/300",
-    category: "electronics"
+    name: "BEIGE TRENCH COAT",
+    description: "Color: beige",
+    price: 110.99,
+    image: "/images/products/beige-coat.jpg",
+    category: "COATS"
   },
   {
     id: 3,
-    name: "Organic Cotton T-Shirt",
-    description: "Comfortable and eco-friendly t-shirt made from organic cotton",
-    price: 24.99,
-    image: "/api/placeholder/400/300",
-    category: "clothing"
+    name: "PLAID COAT",
+    description: "Color: grey",
+    price: 49.99,
+   image: "/images/products/plaid-grey-coat.jpg",
+    category: "COATS"
   },
   {
     id: 4,
-    name: "Stainless Steel Water Bottle",
-    description: "Keep your drinks hot or cold with this insulated bottle",
-    price: 19.99,
-    image: "/api/placeholder/400/300",
-    category: "home"
+    name: "BASIC UNISEX GREY T-SHIRT",
+    description: "Color: grey",
+    price: 5.99,
+    image: "/images/products/grey-basic-tshirt.jpg",
+    category: "T-SHIRTS"
   },
   {
     id: 5,
-    name: "Bluetooth Portable Speaker",
-    description: "Compact speaker with powerful sound for on-the-go",
-    price: 59.99,
-    image: "/api/placeholder/400/300",
-    category: "electronics"
+    name: "BASIC UNISEX WHITE T-SHIRT",
+    description: "Color: white",
+    price: 5.99,
+    image: "/images/products/white-basic-tshirt.jpg",
+    category: "T-SHIRTS"
   },
   {
     id: 6,
-    name: "Leather Wallet",
-    description: "Stylish and durable genuine leather wallet",
-    price: 34.99,
-    image: "/api/placeholder/400/300",
-    category: "accessories"
+    name: "BASIC UNISEX PEACH T-SHIRT",
+    description: "Color: peach",
+    price: 5.99,
+    image: "/images/products/peach-basic-tshirt.jpg",
+    category: "T-SHIRTS"
+  },
+  {
+    id: 7,
+    name: "FLARED JEANS",
+    description: "Color: navy",
+    price: 10.99,
+    image: "/images/products/flared-jeans.jpg",
+    category: "JEANS"
+  },
+  {
+    id: 8,
+    name: "HIGH-WAISTED MOM JEANS",
+    description: "Color: blue",
+    price: 10.99,
+    image: "/images/products/mom-jeans.jpg",
+    category: "JEANS"
+  },
+  {
+    id: 9,
+    name: "HIGH-WAISTED SKINNY JEANS",
+    description: "Color: grey",
+    price: 10.99,
+    image: "/images/products/skinny-jeans.jpg",
+    category: "JEANS"
+  },
+  {
+    id: 10,
+    name: "BASIC SILVER EARRINGS",
+    description: "Color: silver",
+    price: 20.99,
+    image: "/images/products/silver-earrings.jpg",
+    category: "ACCESSORIES"
+  },
+  {
+    id: 11,
+    name: "GOLD-COLORED STAR EARRINGS",
+    description: "Color: gold",
+    price: 20.99,
+    image: "/images/products/gold-earrings.jpg",
+    category: "ACCESSORIES"
+  },
+  {
+    id: 12,
+    name: "PINK GEM-STONE EARRINGS",
+    description: "Color: PINK",
+    price: 20.99,
+    image: "/images/products/gemstone-earrings.jpg",
+    category: "ACCESSORIES"
+  },
+  {
+    id: 13,
+    name: "BROWN TRENCH COAT",
+    description: "Color: brown",
+    price: 99.99,
+    image: "/images/products/brown-coat.jpg",
+    category: "COATS"
+  },
+  {
+    id: 14,
+    name: "WHITE WINTER COAT",
+    description: "Color: white",
+    price: 119.99,
+    image: "/images/products/white-winter-coat.jpg",
+    category: "COATS"
+  },
+  {
+    id: 15,
+    name: "YELLOW COAT",
+    description: "Color: yellow",
+    price: 89.99,
+    image: "/images/products/yellow-coat.jpg",
+    category: "COATS"
+  },
+  {
+    id: 16,
+    name: "SUNGLASSES",
+    description: "Color: brown",
+    price: 9.99,
+    image: "/images/products/sunglasses.jpg",
+    category: "ACCESSORIES"
+  },
+  {
+    id: 17,
+    name: "SILVER NECKLACE",
+    description: "Color: silver",
+    price: 9.99,
+    image: "/images/products/silver-necklace.jpg",
+    category: "ACCESSORIES"
+  },
+  {
+    id: 18,
+    name: "GOLD-COLORED RINGS",
+    description: "Color: golden",
+    price: 27.99,
+    image: "/images/products/gold-colored-rings.jpg",
+    category: "ACCESSORIES"
   }
 ];
 
