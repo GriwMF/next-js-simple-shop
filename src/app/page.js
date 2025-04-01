@@ -1,4 +1,3 @@
-// app/page.js
 'use client';
 
 import { Button, Typography, Container, Box, Grid, Paper } from '@mui/material';

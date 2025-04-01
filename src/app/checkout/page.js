@@ -92,7 +92,8 @@ export default function Checkout() {
   
   const validatePaymentForm = () => {
     const required = ['cardName', 'cardNumber', 'expDate', 'cvv'];
-    return required.every(field => paymentDetails[field].trim() !== '');
+    return paymentDetails.paymentMethod === 'paypal' ||
+      required.every(field => paymentDetails[field].trim() !== '');
   };
   
   // Handle next step
@@ -131,15 +132,18 @@ export default function Checkout() {
   // Handle place order
   const handlePlaceOrder = () => {
     // Clear cart and show success message
-    setNotification({
-      open: true,
-      message: 'Order placed successfully!',
-      severity: 'success'
-    });
+    // setNotification({
+    //   open: true,
+    //   message: 'Order placed successfully!',
+    //   severity: 'success'
+    // });
 
     // Redirect to success page after a delay
     router.push('/order-success');
-    clearCart();
+    setTimeout(() => {
+      // Clear cart and show success message
+      clearCart();
+    }, 1500);
   };
   
   // Handle close notification
