@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { 
   Typography, 
@@ -18,13 +18,27 @@ import {
   Box,
   Chip,
   Snackbar,
-  Alert
+  Alert,
+  CircularProgress
 } from '@mui/material';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { products, getProductsByCategory } from '../../lib/productData';
 import { useCart } from '../../context/CartContext';
 
-export default function ProductsPage() {
+// Loading component to display while the page is loading
+function ProductsLoading() {
+  return (
+    <Container maxWidth="lg">
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '50vh', flexDirection: 'column', gap: 2 }}>
+        <CircularProgress />
+        <Typography variant="h6">Loading products...</Typography>
+      </Box>
+    </Container>
+  );
+}
+
+// Component that uses useSearchParams
+function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryFilter = searchParams.get('category');
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -161,5 +175,14 @@ export default function ProductsPage() {
         </Alert>
       </Snackbar>
     </Container>
+  );
+}
+
+// Main component that wraps everything in a Suspense boundary
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={<ProductsLoading />}>
+      <ProductsContent />
+    </Suspense>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { 
   Container, 
@@ -8,14 +8,15 @@ import {
   Box, 
   Paper, 
   Button,
-  Divider
+  Divider,
+  CircularProgress
 } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import Link from 'next/link';
 import { useOrders } from '../../context/OrderContext';
 
-export default function OrderSuccess() {
-  const router = useRouter();
+// This component will use the search params
+function OrderDetails() {
   const searchParams = useSearchParams();
   const { getOrderById } = useOrders();
   const [order, setOrder] = useState(null);
@@ -66,8 +67,8 @@ export default function OrderSuccess() {
         </Box>
         
         <Typography variant="body1" paragraph>
-          We've sent a confirmation email with your order details.
-          You'll receive another notification when your order ships.
+          We&apos;ve sent a confirmation email with your order details.
+          You&apos;ll receive another notification when your order ships.
         </Typography>
         
         <Divider sx={{ my: 4 }} />
@@ -90,5 +91,28 @@ export default function OrderSuccess() {
         </Box>
       </Paper>
     </Container>
+  );
+}
+
+// Loading fallback component
+function OrderLoading() {
+  return (
+    <Container maxWidth="md">
+      <Paper sx={{ p: 4, my: 8, textAlign: 'center' }}>
+        <CircularProgress />
+        <Typography variant="h5" sx={{ mt: 2 }}>
+          Loading order information...
+        </Typography>
+      </Paper>
+    </Container>
+  );
+}
+
+// Main component with Suspense boundary
+export default function OrderSuccess() {
+  return (
+    <Suspense fallback={<OrderLoading />}>
+      <OrderDetails />
+    </Suspense>
   );
 }

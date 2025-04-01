@@ -79,7 +79,7 @@ export default function CartPage() {
             Your cart is empty
           </Typography>
           <Typography variant="body1" color="text.secondary" paragraph>
-            Looks like you haven't added any products to your cart yet.
+            Looks like you haven&apos;t added any products to your cart yet.
           </Typography>
           <Button 
             variant="contained" 
