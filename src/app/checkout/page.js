@@ -29,12 +29,14 @@ import {
   ListItemText
 } from '@mui/material';
 import { useCart } from '../../context/CartContext';
+import { useOrders } from '../../context/OrderContext';
 
 // Step components
 const steps = ['Shipping Address', 'Payment Details', 'Review Order'];
 
 export default function Checkout() {
   const { cart, getCartTotal, clearCart } = useCart();
+  const { addOrder } = useOrders();
   const router = useRouter();
   const [activeStep, setActiveStep] = useState(0);
   const [notification, setNotification] = useState({ open: false, message: '', severity: 'success' });
@@ -131,17 +133,33 @@ export default function Checkout() {
   
   // Handle place order
   const handlePlaceOrder = () => {
-    // Clear cart and show success message
-    // setNotification({
-    //   open: true,
-    //   message: 'Order placed successfully!',
-    //   severity: 'success'
-    // });
-
-    // Redirect to success page after a delay
-    router.push('/order-success');
+    // Create a new order with all relevant data
+    const orderData = {
+      items: [...cart],
+      subtotal,
+      shipping,
+      tax,
+      total,
+      shippingDetails,
+      paymentDetails: {
+        ...paymentDetails,
+        // Remove sensitive data
+        cardNumber: paymentDetails.cardNumber ? 
+          `xxxx-xxxx-xxxx-${paymentDetails.cardNumber.slice(-4)}` : '',
+        cvv: ''
+      },
+      date: new Date().toISOString(),
+      status: 'Processing'
+    };
+    
+    // Add the order to the orders context
+    const savedOrder = addOrder(orderData);
+    
+    // Redirect to success page with the order ID
+    router.push(`/order-success?orderId=${savedOrder.id}`);
+    
+    // Clear cart after a short delay
     setTimeout(() => {
-      // Clear cart and show success message
       clearCart();
     }, 1500);
   };
